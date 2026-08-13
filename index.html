@@ -544,6 +544,88 @@
         transition: none !important;
       }
     }
+
+    /* ---------- Cookie banner ---------- */
+    #cookie-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      background: var(--navy-deep);
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    #cookie-banner[hidden] { display: none; }
+
+    #cookie-banner p { margin: 0; max-width: 60ch; }
+
+    #cookie-banner a { color: #fff; text-decoration: underline; }
+
+    #cookie-banner .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    #cookie-banner button {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 9px 16px;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 1px solid #fff;
+    }
+
+    #cookie-accept {
+      background: #fff;
+      color: var(--navy-deep);
+      border-color: #fff;
+    }
+
+    #cookie-reject {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 560px) {
+      #cookie-banner { flex-direction: column; align-items: stretch; }
+
+      #cookie-banner .cookie-actions { justify-content: stretch; }
+
+      #cookie-banner button { flex: 1; }
+    }
+
+    /* ---------- Legal footer links ---------- */
+    .legal-links {
+      grid-column: 1 / -1;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    .legal-links a {
+      color: var(--ink-dim);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+    }
+
+    .legal-links a:hover { color: var(--red); border-color: var(--red); }
   </style>
 
   <script type="application/ld+json">
@@ -765,6 +847,11 @@
           </svg>
         </a>
       </div>
+      <div class="legal-links">
+        <a href="./aviso-legal.html">Aviso Legal</a> ·
+        <a href="./politica-privacidad.html">Política de Privacidad</a> ·
+        <a href="./politica-cookies.html">Política de Cookies</a>
+      </div>
     </div>
   </footer>
 
@@ -778,6 +865,16 @@
       });
     });
   </script>
+
+  <div id="cookie-banner" hidden>
+    <p>Esta web usa cookies de Google Maps y Google Fonts para mostrar el mapa y las
+      tipografías. Consulta nuestra <a href="./politica-cookies.html">Política de Cookies</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookie-reject" type="button">Rechazar no esenciales</button>
+      <button id="cookie-accept" type="button">Aceptar</button>
+    </div>
+  </div>
+  <script src="./cookie-banner.js"></script>
 
 </body>
 
