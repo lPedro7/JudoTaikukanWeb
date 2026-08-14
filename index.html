@@ -565,11 +565,19 @@
       line-height: 1.4;
     }
 
-    #cookie-banner[hidden] { display: none; }
+    #cookie-banner[hidden] {
+      display: none;
+    }
 
-    #cookie-banner p { margin: 0; max-width: 60ch; }
+    #cookie-banner p {
+      margin: 0;
+      max-width: 60ch;
+    }
 
-    #cookie-banner a { color: #fff; text-decoration: underline; }
+    #cookie-banner a {
+      color: #fff;
+      text-decoration: underline;
+    }
 
     #cookie-banner .cookie-actions {
       display: flex;
@@ -600,11 +608,18 @@
     }
 
     @media (max-width: 560px) {
-      #cookie-banner { flex-direction: column; align-items: stretch; }
+      #cookie-banner {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
-      #cookie-banner .cookie-actions { justify-content: stretch; }
+      #cookie-banner .cookie-actions {
+        justify-content: stretch;
+      }
 
-      #cookie-banner button { flex: 1; }
+      #cookie-banner button {
+        flex: 1;
+      }
     }
 
     /* ---------- Legal footer links ---------- */
@@ -625,7 +640,48 @@
       padding-bottom: 2px;
     }
 
-    .legal-links a:hover { color: var(--red); border-color: var(--red); }
+    .legal-links a:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    /* ---------- Gallery (masonry) ---------- */
+    .gallery {
+      column-count: 2;
+      column-gap: 16px;
+    }
+
+    .gallery-item {
+      margin: 0 0 16px;
+      break-inside: avoid;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(7, 27, 55, 0.85);
+      color: #fff;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -678,6 +734,7 @@
         <li><a href="#horarios">Horarios</a></li>
         <li><a href="#sensei">Maestro</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button class="navtoggle" id="navtoggle" aria-label="Abrir menú">☰</button>
@@ -770,6 +827,38 @@
           <div class="sensei-title">7º Dan · Maestro Nacional</div>
           <p class="sensei-desc">Al frente de Judo Taikukan, formando judokas de todas las edades sobre el tatami.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">El dojo</p>
+        <h2>Galería</h2>
+      </div>
+      <div class="gallery">
+        <figure class="gallery-item">
+          <img src="./img/EntrenoClase.webp" alt="Clase de judo en el tatami de Judo Taikukan en Palma" loading="lazy"
+            width="1440" height="993">
+          <figcaption>Clase de judo en el tatami</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="./img/EntrenoFinAno.webp" alt="Entreno de fin de año en Judo Taikukan, Palma" loading="lazy"
+            width="1440" height="1080">
+          <figcaption>Entreno de fin de año</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="./img/MariaOliver.jpg"
+            alt="María Oliver, Campeona de España Senior, en el tatami de Judo Taikukan, Palma" loading="lazy"
+            width="640" height="783">
+          <figcaption>María Oliver, Campeona de España Senior</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="./img/Veteranos.webp" alt="Veteranos de Judo Taikukan en entrenamiento, Palma" loading="lazy"
+            width="1440" height="1193">
+          <figcaption>Veteranos</figcaption>
+        </figure>
       </div>
     </div>
   </section>
