@@ -693,6 +693,75 @@
       }
     }
 
+    /* ---------- FAQ ---------- */
+    .faq-list {
+      display: grid;
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .faq-item {
+      background: var(--paper-raised);
+      border-left: 3px solid var(--navy);
+    }
+
+    .faq-item>summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 28px;
+      cursor: pointer;
+      list-style: none;
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+    }
+
+    .faq-item>summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item>summary::after {
+      content: "+";
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open]>summary::after {
+      content: "\2212";
+    }
+
+    .faq-item[open]>summary {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding: 20px 28px 24px;
+      color: var(--ink-dim);
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    @media (max-width: 560px) {
+      .faq-item>summary {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+      }
+
+      .faq-item p {
+        padding: 16px 20px 20px;
+      }
+    }
+
     /* ---------- WhatsApp floating button ---------- */
     .whatsapp-float {
       position: fixed;
@@ -777,6 +846,55 @@
   ]
 }
 </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿A partir de qué edad se puede empezar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tenemos clases a partir de 3 años."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Soy muy mayor para empezar un arte marcial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En absoluto, tenemos deportistas de todas las edades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hace falta alguna experiencia o entrenamiento previo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, en nuestro club entrenarás independientemente de tu estado actual, adaptándonos a tus necesidades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué necesito para entrenar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para hacer Judo se usa un Judogi, pero si no tienes, puedes venir con ropa deportiva los primeros días."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo probar una clase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "¡Por supuesto! Llámanos o manda un mensaje al +34 650 41 71 07 sin compromiso."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -790,8 +908,9 @@
       <ul class="navlinks" id="navlinks">
         <li><a href="#horarios">Horarios</a></li>
         <li><a href="#sensei">Maestro</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
         <li><a href="#galeria">Galería</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <button class="navtoggle" id="navtoggle" aria-label="Abrir menú">☰</button>
@@ -952,12 +1071,49 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Resolvemos tus dudas</p>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿A partir de qué edad se puede empezar?</summary>
+          <p>Tenemos clases a partir de 3 años.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Soy muy mayor para empezar un arte marcial?</summary>
+          <p>En absoluto, tenemos deportistas de todas las edades.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Hace falta alguna experiencia o entrenamiento previo?</summary>
+          <p>No, en nuestro club entrenarás independientemente de tu estado actual, adaptándonos a tus necesidades.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué necesito para entrenar?</summary>
+          <p>Para hacer Judo se usa un Judogi, pero si no tienes, puedes venir con ropa deportiva los primeros días.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo probar una clase?</summary>
+          <p>¡Por supuesto! Llámanos o manda un mensaje al +34 650 41 71 07 sin compromiso.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Tengo que competir?</summary>
+          <p>Para nada, en nuestro gimnasio realizamos tanto Judo recreativo como Judo de competición.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <footer id="contacto">
     <div class="wrap foot-grid">
       <div>
         <p class="eyebrow" style="margin-bottom:10px;">Judo Taikukan</p>
         <p class="foot-note">Sanagym, Carrer de Gabriel Fuster, 35 · 07004 Palma</p>
-        <p class="foot-note"><a class="tel-link" href="tel:+34650417107" style="color:inherit;text-decoration:none;">+34 650 417 107</a>
+        <p class="foot-note"><a class="tel-link" href="tel:+34650417107" style="color:inherit;text-decoration:none;">+34
+            650 417 107</a>
         </p>
       </div>
       <div class="social">
