@@ -526,6 +526,46 @@
       color: var(--ink-dim);
     }
 
+    /* ---------- Colaboradores ---------- */
+    .partners-block {
+      width: 100%;
+    }
+
+    .partners {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .partners a {
+      display: inline-flex;
+      transition: opacity .2s ease;
+    }
+
+    .partners img {
+      height: 64px;
+      width: auto;
+      display: block;
+      opacity: .75;
+      filter: grayscale(.6);
+      transition: opacity .2s ease, filter .2s ease;
+    }
+
+    .partners a:hover img {
+      opacity: 1;
+      filter: none;
+    }
+
+    @media (max-width: 560px) {
+      .partners img {
+        height: 48px;
+      }
+    }
+
     /* ---------- Intro ---------- */
     .intro {
       padding: 56px 0;
@@ -1165,6 +1205,22 @@
       11.894-11.893a11.821 11.821 0 00-3.48-8.413Z" />
           </svg>
         </a>
+      </div>
+      <div class="partners-block">
+        <p class="eyebrow" style="margin-bottom:12px;">Entidades</p>
+        <ul class="partners">
+          <li>
+            <a href="https://www.fedebaljudo.com/es/" target="_blank" rel="noopener">
+              <img src="./img/logoFederacion.webp" alt="Federació Balear de Judo i EE. AA." loading="lazy" width="600"
+                height="650">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.conselldemallorca.es/es/" target="_blank" rel="noopener">
+              <img src="./img/logoConsell.webp" alt="Consell de Mallorca" loading="lazy" width="600" height="250">
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="legal-links">
         <a href="./aviso-legal.html">Aviso Legal</a> ·

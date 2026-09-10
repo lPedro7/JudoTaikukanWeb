@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aviso Legal | Judo Taikukan</title>
-  <meta name="description"
-    content="Aviso Legal de la web Judo Taikukan, titular Judo Taikukan, Palma, Illes Balears.">
+  <meta name="description" content="Aviso Legal de la web Judo Taikukan, titular Judo Taikukan, Palma, Illes Balears.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://judotaikukan.es/aviso-legal.html">
   <link rel="icon" type="image/png" href="./tkk.png">
@@ -215,6 +214,37 @@
     .legal-links a:hover {
       border-color: var(--red);
       color: var(--red);
+    }
+
+    /* Colaboradores */
+    .partners {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .partners img {
+      height: 56px;
+      width: auto;
+      display: block;
+      opacity: .75;
+      filter: grayscale(.6);
+      transition: opacity .2s ease, filter .2s ease;
+    }
+
+    .partners a:hover img {
+      opacity: 1;
+      filter: none;
+    }
+
+    @media (max-width: 560px) {
+      .partners img {
+        height: 44px;
+      }
     }
   </style>
 </head>
