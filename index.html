@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Judo Taikukan | Escuela de Judo en Palma</title>
+  <title>Judo Taikukan | Escuela de Judo en Palma y Sineu</title>
   <meta name="description"
-    content="¿Buscas artes marciales en Palma? Descubre Judo Taikukan, escuela especializada en Judo dirigida por Miguel Ángel Bisquerra, 7º Dan y Maestro Nacional. Consulta horarios y ubicación.">
+    content="¿Buscas artes marciales en Palma o Sineu? Descubre Judo Taikukan, escuela especializada en Judo en Mallorca dirigida por maestros nacionales. Consulta horarios y sedes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="./logo.svg" fetchpriority="high">
@@ -25,14 +25,14 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Judo Taikukan">
-  <meta property="og:title" content="Judo Taikukan | Escuela de Judo en Palma">
+  <meta property="og:title" content="Judo Taikukan | Escuela de Judo en Palma y Sineu">
   <meta property="og:description"
-    content="Escuela de Judo en Palma dirigida por Miguel Ángel Bisquerra, 7º Dan y Maestro Nacional.">
+    content="Escuela de Judo en Palma y Sineu (Mallorca) dirigida por maestros nacionales de judo.">
   <meta property="og:url" content="https://judotaikukan.es/">
   <meta property="og:image" content="https://judotaikukan.es/tkk.png">
   <meta property="og:image:width" content="1254">
   <meta property="og:image:height" content="1254">
-  <meta property="og:image:alt" content="Logo de Judo Taikukan, escuela de judo en Palma">
+  <meta property="og:image:alt" content="Logo de Judo Taikukan, escuela de judo en Palma y Sineu">
   <meta property="og:locale" content="es_ES">
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -303,6 +303,21 @@
       border: 1px solid var(--line);
     }
 
+    .venue-block {
+      margin-top: 40px;
+    }
+
+    .venue-title {
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      color: var(--paper-raised);
+      background: var(--navy);
+      margin: 0;
+      padding: 16px 28px;
+    }
+
     .row {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -342,6 +357,7 @@
       font-weight: 700;
       color: var(--red);
       white-space: nowrap;
+      text-align: right;
     }
 
     @media (max-width: 560px) {
@@ -353,11 +369,18 @@
 
       .row .time {
         font-size: 1.1rem;
+        text-align: left;
+      }
+
+      .venue-title {
+        padding: 14px 20px;
       }
     }
 
     .days-note {
-      margin-top: 20px;
+      margin-top: 0;
+      padding: 18px 28px 16px;
+      background: var(--paper-raised);
       font-family: "JetBrains Mono", monospace;
       font-size: 0.8rem;
       color: var(--ink-dim);
@@ -365,6 +388,28 @@
     }
 
     /* ---------- Sensei ---------- */
+    .sensei-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .sensei-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .sensei-grid .sensei {
+        text-align: center;
+      }
+
+      .sensei-grid .stamp {
+        margin: 0 auto 20px;
+      }
+    }
+
     .sensei {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -445,6 +490,15 @@
       padding: 28px;
     }
 
+    .loc-card .loc-city {
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      color: var(--red);
+      margin: 0 0 14px;
+    }
+
     .loc-card .addr-big {
       font-family: "JetBrains Mono", monospace;
       font-size: 1.05rem;
@@ -494,8 +548,9 @@
     }
 
     .social {
-      display: flex;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 40px);
+      gap: 14px 16px;
     }
 
     .social a {
@@ -850,39 +905,108 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "SportsActivityLocation"],
-  "name": "Judo Taikukan",
-  "url": "https://judotaikukan.es/",
-  "description": "Escuela de Judo en Palma dirigida por Miguel Ángel Bisquerra, 7º Dan y Maestro Nacional.",
-  "image": [
-    "https://judotaikukan.es/logo.svg",
-    "https://judotaikukan.es/tkk.png"
-  ],
-  "telephone": "+34650417107",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Carrer de Gabriel Fuster, 35",
-    "postalCode": "07004",
-    "addressLocality": "Palma",
-    "addressRegion": "Illes Balears",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 39.5880768,
-    "longitude": 2.6542553
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Thursday"],
-      "opens": "17:30",
-      "closes": "21:00"
+      "@type": ["LocalBusiness", "SportsActivityLocation"],
+      "@id": "https://judotaikukan.es/#palma",
+      "name": "Judo Taikukan",
+      "url": "https://judotaikukan.es/",
+      "description": "Escuela de Judo en Palma dirigida por Miguel Ángel Bisquerra, 7º Dan y Maestro Nacional.",
+      "image": [
+        "https://judotaikukan.es/logo.svg",
+        "https://judotaikukan.es/tkk.png"
+      ],
+      "telephone": "+34650417107",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer de Gabriel Fuster, 35",
+        "postalCode": "07004",
+        "addressLocality": "Palma",
+        "addressRegion": "Illes Balears",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5880768,
+        "longitude": 2.6542553
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Thursday"],
+          "opens": "17:30",
+          "closes": "21:00"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Miguel Ángel Bisquerra",
+        "jobTitle": "Maestro Nacional",
+        "description": "7º Dan de Judo y Maestro Nacional"
+      },
+      "sameAs": [
+        "https://www.instagram.com/judotaikukan/",
+        "https://www.facebook.com/profile.php?id=100063772321179"
+      ]
+    },
+    {
+      "@type": ["LocalBusiness", "SportsActivityLocation"],
+      "@id": "https://judotaikukan.es/#sineu",
+      "name": "Judo Taikukan Sineu",
+      "url": "https://judotaikukan.es/#sede-sineu",
+      "description": "Escuela de Judo en Sineu dirigida por María Oliver, 4º Dan, Maestra Nacional y Campeona de España Senior.",
+      "image": [
+        "https://judotaikukan.es/logo.svg",
+        "https://judotaikukan.es/tkk.png"
+      ],
+      "telephone": "+34654369046",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer de Llevant, 56",
+        "postalCode": "07510",
+        "addressLocality": "Sineu",
+        "addressRegion": "Illes Balears",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.6464854,
+        "longitude": 3.0104613
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday"],
+          "opens": "18:00",
+          "closes": "19:00",
+          "description": "Niños y niñas hasta 13 años"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday"],
+          "opens": "19:00",
+          "closes": "21:00",
+          "description": "Jóvenes y adultos desde 14 años"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday"],
+          "opens": "18:30",
+          "closes": "20:00",
+          "description": "Jóvenes y adultos desde 14 años"
+        }
+      ],
+      "employee": {
+        "@type": "Person",
+        "name": "María Oliver",
+        "jobTitle": "Maestra Nacional",
+        "description": "4º Dan de Judo, Maestra Nacional y Campeona de España Senior"
+      },
+      "sameAs": [
+        "https://www.instagram.com/judotaikukan_sineu/",
+        "https://www.facebook.com/profile.php?id=61566441115207"
+      ]
     }
-  ],
-  "sameAs": [
-    "https://www.instagram.com/judotaikukan/",
-    "https://www.facebook.com/profile.php?id=100063772321179"
   ]
 }
 </script>
@@ -929,7 +1053,7 @@
         "name": "¿Puedo probar una clase?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "¡Por supuesto! Llámanos o manda un mensaje al +34 650 41 71 07 sin compromiso."
+          "text": "¡Por supuesto! Llámanos o manda un mensaje al +34 650 41 71 07 (Palma) o al +34 654 36 90 46 (Sineu) sin compromiso."
         }
       },
       {
@@ -955,9 +1079,9 @@
       <a href="#" class="brand"><img src="./logo.svg" alt="Judo Taikukan" width="70" height="42"></a>
       <ul class="navlinks" id="navlinks">
         <li><a href="#horarios">Horarios</a></li>
-        <li><a href="#sensei">Maestro</a></li>
+        <li><a href="#sensei">Maestros</a></li>
         <li><a href="#galeria">Galería</a></li>
-        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#ubicacion">Sedes</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -970,11 +1094,12 @@
       <img class="logo-big" src="./logo.svg" alt="Escuela de Judo Taikukan en Palma" width="340" height="340"
         fetchpriority="high">
       <h1 class="hero-title">
-        Escuela de Judo en Palma
+        Escuela de Judo en Palma y Sineu
 
       </h1>
-      <p class="sub">Disciplina y técnica sobre el tatami, martes y jueves, en Palma.</p>
-      <p class="addr">Carrer de Gabriel Fuster, 35 · 07004 Palma</p>
+      <p class="sub">Disciplina y técnica sobre el tatami. Clases en Palma (martes y jueves) y en Sineu (lunes,
+        miércoles y viernes).</p>
+      <p class="addr">Palma: Carrer de Gabriel Fuster, 35 · Sineu: Carrer de Llevant, 56</p>
       <a href="#horarios" class="cta">Ver horarios ↓</a>
     </div>
   </section>
@@ -986,15 +1111,18 @@
   <section id="intro" class="intro">
     <div class="wrap">
       <p class="intro-text">
-        Judo Taikukan es una <strong>escuela de judo en Palma</strong> dedicada a la
-        enseñanza de las artes marciales y la disciplina del tatami. Bajo la dirección de
-        <strong>Miguel Ángel Bisquerra, 7º Dan y Maestro Nacional</strong>, formamos a
-        judokas de todas las edades en Mallorca: desde los más pequeños que dan sus
-        primeros pasos sobre el tatami hasta adultos que buscan iniciarse o perfeccionar
-        su técnica. Nuestras clases de judo se imparten en el Gimnasio Sanagym, martes y jueves por la tarde, en grupos
-        adaptados a cada edad y
-        nivel. Una escuela donde la técnica, el respeto y la tradición del judo conviven
-        con un aprendizaje práctico y cercano.
+        Judo Taikukan es una <strong>escuela de judo en Mallorca</strong> dedicada a la
+        enseñanza de las artes marciales y la disciplina del tatami. Con sede en
+        <strong>Palma</strong>, dirigida por <strong>Miguel Ángel Bisquerra, 7º Dan y
+          Maestro Nacional</strong>, y sede en <strong>Sineu</strong>, dirigida por
+        <strong>María Oliver, 4º Dan, Maestra Nacional y Campeona de España
+          Senior</strong>, formamos a judokas de todas las edades: desde los más pequeños
+        que dan sus primeros pasos sobre el tatami hasta adultos que buscan iniciarse o
+        perfeccionar su técnica. Nuestras clases de judo se imparten en el Gimnasio
+        Sanagym de Palma, martes y jueves por la tarde, y en el Gimnàs Sineu, lunes,
+        miércoles y viernes, en grupos adaptados a cada edad y nivel. Una escuela donde
+        la técnica, el respeto y la tradición del judo conviven con un aprendizaje
+        práctico y cercano.
       </p>
     </div>
   </section>
@@ -1006,6 +1134,7 @@
         <h2>Horarios</h2>
       </div>
       <div class="schedule">
+        <h3 class="venue-title">Palma · Gimnasio Sanagym</h3>
         <div class="row">
           <div class="group">
             <h3>Pequeños</h3>
@@ -1030,8 +1159,28 @@
           </div>
           <div class="time">19:30 – 21:00</div>
         </div>
+        <p class="days-note">Martes y jueves</p>
       </div>
-      <p class="days-note">Martes y jueves</p>
+      <div class="schedule venue-block">
+        <h3 class="venue-title">Sineu · Gimnàs Sineu</h3>
+        <div class="row">
+          <div class="group">
+            <h3>Niños y niñas (hasta 13 años)</h3>
+            <p class="group-desc">Clases de judo infantil donde los más pequeños aprenden las caídas, la coordinación y
+              los valores del respeto y la disciplina sobre el tatami.</p>
+          </div>
+          <div class="time">L y X · 18:00 – 19:00</div>
+        </div>
+        <div class="row">
+          <div class="group">
+            <h3>Jóvenes y adultos (desde 14 años)</h3>
+            <p class="group-desc">Judo para jóvenes y adultos, desde iniciación hasta perfeccionamiento técnico.
+              Condición física, self-defense y tradición sobre el tatami.</p>
+          </div>
+          <div class="time">L y X · 19:00 – 21:00<br>V · 18:30 – 20:00</div>
+        </div>
+        <p class="days-note">Lunes, miércoles y viernes</p>
+      </div>
     </div>
   </section>
 
@@ -1039,17 +1188,32 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Al frente del dojo</p>
-        <h2>El maestro</h2>
+        <h2>Los maestros</h2>
       </div>
-      <div class="sensei">
-        <div class="stamp">
-          <span class="n">7º</span>
-          <span class="d">DAN</span>
+      <div class="sensei-grid">
+        <div class="sensei">
+          <div class="stamp">
+            <span class="n">7º</span>
+            <span class="d">DAN</span>
+          </div>
+          <div>
+            <div class="sensei-name">Miguel Ángel Bisquerra</div>
+            <div class="sensei-title">7º Dan · Maestro Nacional</div>
+            <p class="sensei-desc">Dirige la sede de Palma (Gimnasio Sanagym), formando judokas de todas las edades
+              sobre el tatami.</p>
+          </div>
         </div>
-        <div>
-          <div class="sensei-name">Miguel Ángel Bisquerra</div>
-          <div class="sensei-title">7º Dan · Maestro Nacional</div>
-          <p class="sensei-desc">Al frente de Judo Taikukan, formando judokas de todas las edades sobre el tatami.</p>
+        <div class="sensei">
+          <div class="stamp">
+            <span class="n">4º</span>
+            <span class="d">DAN</span>
+          </div>
+          <div>
+            <div class="sensei-name">María Oliver</div>
+            <div class="sensei-title">4º Dan · Maestra Nacional · Campeona de España Senior</div>
+            <p class="sensei-desc">Dirige la sede de Sineu (Gimnàs Sineu), transmitiendo técnica, esfuerzo y pasión por
+              el judo.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1064,8 +1228,8 @@
       <div class="gallery">
         <figure class="gallery-item">
           <img src="./img/MariaOliver.jpg"
-            alt="María Oliver, Campeona de España Senior, en el tatami de Judo Taikukan, Palma" loading="lazy"
-            width="640" height="783">
+            alt="María Oliver, 4º Dan, Maestra Nacional y Campeona de España Senior, en el tatami de Judo Taikukan"
+            loading="lazy" width="640" height="783">
           <figcaption>María Oliver, Campeona de España Senior</figcaption>
         </figure>
         <figure class="gallery-item">
@@ -1096,14 +1260,15 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Cómo llegar</p>
-        <h2>Ubicación</h2>
+        <h2>Sedes</h2>
       </div>
       <div class="loc-grid">
         <div class="loc-card">
+          <p class="loc-city">Palma</p>
           <div class="addr-big">
             Gimnasio Sanagym<br>
             Carrer de Gabriel Fuster, 35<br>
-            Nord, 07004 Palma<br>
+            07004 Palma<br>
             Illes Balears
           </div>
           <a class="loc-link"
@@ -1114,6 +1279,25 @@
         <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="Mapa con la ubicación de Judo Taikukan en Carrer de Gabriel Fuster 35, Palma"
           src="https://www.google.com/maps?q=Carrer+de+Gabriel+Fuster+35+07004+Palma+Illes+Balears&output=embed">
+        </iframe>
+      </div>
+      <div class="loc-grid venue-block">
+        <div class="loc-card">
+          <p class="loc-city">Sineu</p>
+          <div class="addr-big">
+            Gimnàs Sineu<br>
+            Carrer de Llevant, 56<br>
+            07510 Sineu<br>
+            Illes Balears
+          </div>
+          <a class="loc-link"
+            href="https://www.google.com/maps/dir/?api=1&destination=Carrer+de+Llevant+56+07510+Sineu+Illes+Balears"
+            target="_blank" rel="noopener">Cómo llegar →</a>
+          <a class="loc-link tel-link" href="tel:+34654369046" style="margin-left:16px;">Llamar →</a>
+        </div>
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa con la ubicación de Judo Taikukan en Carrer de Llevant 56, Sineu"
+          src="https://www.google.com/maps?q=Carrer+de+Llevant+56+07510+Sineu+Illes+Balears&output=embed">
         </iframe>
       </div>
     </div>
@@ -1144,7 +1328,8 @@
         </details>
         <details class="faq-item">
           <summary>¿Puedo probar una clase?</summary>
-          <p>¡Por supuesto! Llámanos o manda un mensaje al +34 650 41 71 07 sin compromiso.</p>
+          <p>¡Por supuesto! Llámanos o manda un mensaje al +34 650 41 71 07 (Palma) o al +34 654 36 90 46 (Sineu) sin
+            compromiso.</p>
         </details>
 
         <details class="faq-item">
@@ -1159,26 +1344,67 @@
     <div class="wrap foot-grid">
       <div>
         <p class="eyebrow" style="margin-bottom:10px;">Judo Taikukan</p>
-        <p class="foot-note">Sanagym, Carrer de Gabriel Fuster, 35 · 07004 Palma</p>
-        <p class="foot-note"><a class="tel-link" href="tel:+34650417107" style="color:inherit;text-decoration:none;">+34
-            650 417 107</a>
-        </p>
+        <p class="foot-note">Palma: Sanagym, Carrer de Gabriel Fuster, 35 · 07004 Palma · <a class="tel-link"
+            href="tel:+34650417107" style="color:inherit;text-decoration:none;">+34 650 417 107</a></p>
+        <p class="foot-note">Sineu: Gimnàs Sineu, Carrer de Llevant, 56 · 07510 Sineu · <a class="tel-link"
+            href="tel:+34654369046" style="color:inherit;text-decoration:none;">+34 654 369 046</a></p>
       </div>
       <div class="social">
-        <a href="https://www.instagram.com/judotaikukan/" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://www.instagram.com/judotaikukan/" target="_blank" rel="noopener" aria-label="Instagram Palma">
           <svg viewBox="0 0 24 24">
             <path
               d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.4.42.6.24 1 .53 1.5 1 .5.5.8.9 1 1.5.17.4.36 1.2.42 2.4.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.4-.24.6-.53 1-1 1.5-.5.5-.9.8-1.5 1-.4.17-1.2.36-2.4.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.4-.42-.6-.24-1-.53-1.5-1-.5-.5-.8-.9-1-1.5-.17-.4-.36-1.2-.42-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.4.24-.6.53-1 1-1.5.5-.5.9-.8 1.5-1 .4-.17 1.2-.36 2.4-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1.02.05-1.58.22-1.95.36-.49.19-.84.42-1.2.79-.37.36-.6.71-.79 1.2-.14.37-.31.93-.36 1.95C2.87 8.48 2.87 8.85 2.87 12s0 3.52.07 4.76c.05 1.02.22 1.58.36 1.95.19.49.42.84.79 1.2.36.37.71.6 1.2.79.37.14.93.31 1.95.36 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1.02-.05 1.58-.22 1.95-.36.49-.19.84-.42 1.2-.79.37-.36.6-.71.79-1.2.14-.37.31-.93.36-1.95.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.05-1.02-.22-1.58-.36-1.95-.19-.49-.42-.84-.79-1.2-.36-.37-.71-.6-1.2-.79-.37-.14-.93-.31-1.95-.36C15.52 4 15.15 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm4.8-3.2a1.08 1.08 0 1 1 0 2.16 1.08 1.08 0 0 1 0-2.16z" />
           </svg>
         </a>
         <a href="https://www.facebook.com/profile.php?id=100063772321179" target="_blank" rel="noopener"
-          aria-label="Facebook">
+          aria-label="Facebook Palma">
           <svg viewBox="0 0 24 24">
             <path
               d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.5c0-.86.24-1.44 1.47-1.44h1.57V4.42C16.2 4.36 15.34 4.3 14.32 4.3c-2.13 0-3.6 1.3-3.6 3.68v2.46H8.16v2.96h2.56V21h2.78z" />
           </svg>
         </a>
-        <a class="whatsapp-link" href="https://wa.me/34650417107" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <a class="whatsapp-link" href="https://wa.me/34650417107" target="_blank" rel="noopener" aria-label="WhatsApp Palma">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967
+      -.273-.099-.471-.148-.67.15-.197.297-.767.966-.94
+      1.164-.173.198-.347.223-.644.074-.297-.149-1.255
+      -.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059
+      -.173-.297-.018-.458.13-.606.134-.133.298-.347
+      .446-.52.149-.174.198-.298.298-.497.099-.198.05
+      -.371-.025-.52-.075-.149-.669-1.612-.916-2.207
+      -.242-.579-.487-.5-.669-.51-.173-.008-.371-.01
+      -.57-.01-.198 0-.52.074-.792.372-.272.297-1.04
+      1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198
+      2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625
+      .712.226 1.36.194 1.872.118.571-.085 1.758-.719
+      2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124
+      -.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0
+      01-5.031-1.378l-.361-.214-3.741.981.998-3.648
+      -.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45
+      4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988
+      2.898a9.825 9.825 0 012.893 6.993c-.003 5.45-4.437
+      9.886-9.885 9.886m8.413-18.297A11.815 11.815 0 0012.055
+      0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142
+      1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0
+      005.683 1.448h.005c6.556 0 11.891-5.335
+      11.894-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+        </a>
+
+        <a href="https://www.instagram.com/judotaikukan_sineu/" target="_blank" rel="noopener" aria-label="Instagram Sineu">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.4.42.6.24 1 .53 1.5 1 .5.5.8.9 1 1.5.17.4.36 1.2.42 2.4.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.4-.24.6-.53 1-1 1.5-.5.5-.9.8-1.5 1-.4.17-1.2.36-2.4.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.4-.42-.6-.24-1-.53-1.5-1-.5-.5-.8-.9-1-1.5-.17-.4-.36-1.2-.42-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.4.24-.6.53-1 1-1.5.5-.5.9-.8 1.5-1 .4-.17 1.2-.36 2.4-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1.02.05-1.58.22-1.95.36-.49.19-.84.42-1.2.79-.37.36-.6.71-.79 1.2-.14.37-.31.93-.36 1.95C2.87 8.48 2.87 8.85 2.87 12s0 3.52.07 4.76c.05 1.02.22 1.58.36 1.95.19.49.42.84.79 1.2.36.37.71.6 1.2.79.37.14.93.31 1.95.36 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1.02-.05 1.58-.22 1.95-.36.49-.19.84-.42 1.2-.79.37-.36.6-.71.79-1.2.14-.37.31-.93.36-1.95.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.05-1.02-.22-1.58-.36-1.95-.19-.49-.42-.84-.79-1.2-.36-.37-.71-.6-1.2-.79-.37-.14-.93-.31-1.95-.36C15.52 4 15.15 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm4.8-3.2a1.08 1.08 0 1 1 0 2.16 1.08 1.08 0 0 1 0-2.16z" />
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61566441115207" target="_blank" rel="noopener"
+          aria-label="Facebook Sineu">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.5c0-.86.24-1.44 1.47-1.44h1.57V4.42C16.2 4.36 15.34 4.3 14.32 4.3c-2.13 0-3.6 1.3-3.6 3.68v2.46H8.16v2.96h2.56V21h2.78z" />
+          </svg>
+        </a>
+        <a class="whatsapp-link" href="https://wa.me/34654369046" target="_blank" rel="noopener" aria-label="WhatsApp Sineu">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967
       -.273-.099-.471-.148-.67.15-.197.297-.767.966-.94
